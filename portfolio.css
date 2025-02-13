@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: azure;
+}
+body {
+    background-color: #080808;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(24, 22, 49, 0.9);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.navbar a {
+    text-decoration: none;
+    color: rgb(38, 134, 131);
+    font-size: 16px;
+    margin: 0 20px;
+    transition: color 0.3s;
+}
+.navbar a:hover {
+    color: red;
+}
+
+/* Header */
+.header {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 10%;
+    text-align: left;
+}
+.headertext {
+    font-size: 25px;
+    max-width: 50%;
+}
+.headertext h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(5, 131, 5);
+}
+.headertext .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.headertext .btn:hover {
+    background: darkgreen;
+}
+.mee img {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    border: 4px solid green;
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+    background: #101010;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col1 img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+.col2 {
+    width: 60%;
+}
+
+/* Tab Links - Modern Look */
+.titles {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.skillinks {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+}
+.skillinks:hover, .skillinks.active {
+    background: #5bc0de; /* Cool blue shade */
+    color: #000;
+}
+
+/* Content Section - Sleek Grid with Cards */
+.underlink {
+    margin-top: 20px;
+}
+.contents {
+    display: none; /* Hidden by default */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: opacity 0.3s ease-in-out;
+}
+.contents.active {
+    display: grid; /* Shown when active */
+    opacity: 1;
+}
+
+/* List Styling - Modern Card Style */
+.contents ul {
+    list-style-type: none;
+    padding: 0;
+}
+.contents li {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.contents li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 10%;
+    background: #181818;
+    text-align: center;
+}
+#proj
+{
+    color: #57e6ed;
+}
+
+/* Portfolio Grid */
+.myimages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Cards */
+.column1, .column2 {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Ensures images do not stretch too wide */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Image Styling */
+.column1 img, .column2 img {
+    width: 100%;
+    height: 200px; /* Sets a fixed height */
+    object-fit: cover; /* Ensures images do not stretch */
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.column1:hover, .column2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2);
+}
+.column1:hover img, .column2:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Overlay */
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 15px;
+}
+.column1:hover .layer, .column2:hover .layer {
+    opacity: 1;
+}
+
+/* Overlay Text */
+.layer h2 {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.layer p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 0 10px;
+}
+.layer a {
+    font-size: 18px;
+    /* color: #5bc0de; */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.layer a:hover {
+    color: #28d0ea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .myimages {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .column1 img, .column2 img {
+        height: 180px; /* Adjust height for smaller screens */
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .myimages {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Footer */
+.footer {
+    padding: 50px 10%;
+    background: #0a0a0a;
+    text-align: center;
+}
+.footer p a {
+    color: #4ec869;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer p a:hover {
+    color: #089455;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    .navbar a {
+        display: block;
+        margin: 5px 0;
+        font-size: 14px;
+    }
+    
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 10px 50px; /* Increased top padding to push it down */
+    }
+
+    .header h1, .header p {
+        margin-top: 35px; /* Additional spacing for text */
+    }
+
+    .mee img {
+        width: 200px;
+        height: 200px;
+    }
+    .headertext {
+        max-width: 100%;
+        font-size: 20px;
+    }
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .col1, .col2 {
+        width: 100%;
+    }
+
+     .myimages {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+    }
+    .column1, .column2 {
+        width: 90%;
+        max-width: 300px; /* Keeps images within a good size */
+    }
+    .titles {
+        flex-direction: column;
+        align-items: center;
+    }
+}
